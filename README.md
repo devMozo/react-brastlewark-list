@@ -1,4 +1,5 @@
 # brastlewark-list
+
 Listing of the Brastlewark's population.
 
 Our team here at AXA is playing a fantasy role-playing game and every time the heroes they play arrive at a town, they have the issue they don't
@@ -11,3 +12,17 @@ Gnomes in this town are not really social because they have too much work to do.
 have few or even no friends at all. They also appreciate their privacy so they've used some random images from internet, not specifically
 optimized for mobile devices, for their profile. (They are very modern in some aspects and they have smartphones and access to internet for
 instance).
+
+# Start the app
+
+```
+npm start
+```
+
+And then go to http://localhost:8080/
+
+# Compile the app
+
+```
+npm run compile
+```

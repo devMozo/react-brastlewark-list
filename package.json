@@ -23,7 +23,8 @@
     }
   },
   "lint-staged": {
-    "app/**/*.{js,jsx}": ["eslint",
+    "app/**/*.{js,jsx}": [
+      "eslint",
       "pretty - quick— staged",
       "git add"
     ]
@@ -49,6 +50,7 @@
   },
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
   }
 }
