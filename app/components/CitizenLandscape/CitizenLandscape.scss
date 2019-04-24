@@ -1,0 +1,62 @@
+.CitizenLandscape {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+
+  $widthEachItemImage: 100px;
+  $widthEachItemFeature: 120px;
+  $widthEachItemDetails: 150px;
+  $widthEachItemName: calc(
+    100% - #{$widthEachItemImage} - (#{$widthEachItemFeature} * 4) - #{$widthEachItemDetails}
+  );
+
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .CitizenLandscape-avatar {
+    width: $widthEachItemImage;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 0px 2px 10px 2px #aaa;
+    overflow: hidden;
+
+    img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+  }
+
+  .CitizenLandscape-name {
+    width: $widthEachItemName;
+    box-sizing: border-box;
+  }
+
+  .CitizenLandscape-features {
+    text-align: center;
+
+    .CitizenLandscape-feature {
+      width: $widthEachItemFeature;
+      display: inline-block;
+    }
+  }
+
+  .CitizenLandscape-details {
+    text-align: center;
+    width: $widthEachItemDetails;
+
+    button {
+      background-color: transparent;
+      font-size: 16px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}

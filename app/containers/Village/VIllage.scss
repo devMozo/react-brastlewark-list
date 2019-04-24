@@ -1,7 +1,25 @@
 .Village {
+  $widthLeftColumn: 100%;
+  $widthRightColumn: 400px;
+
+  & > h1 {
+    text-align: center;
+
+    &:after {
+      content: '';
+      width: 200px;
+      height: 5px;
+      margin: 1rem auto 3rem;
+      background-color: $orange;
+      display: block;
+    }
+  }
+
   .VillageHeader {
+    height: 600px;
+
     .background {
-      height: 600px;
+      height: inherit;
       box-shadow: 0px 2px 20px 2px #333;
     }
 
@@ -10,5 +28,24 @@
       font-size: 3rem;
       text-shadow: 2px 2px #222;
     }
+  }
+
+  .VillageCenterColumn,
+  .VillageRightColumn {
+    box-sizing: border-box;
+  }
+
+  .VillageCenterColumn {
+    width: $widthLeftColumn;
+  }
+
+  .VillageRightColumn {
+    width: $widthRightColumn;
+  }
+
+  .VillageFooter {
+    border-top: 1px solid $orange;
+    text-align: center;
+    color: #aaa;
   }
 }

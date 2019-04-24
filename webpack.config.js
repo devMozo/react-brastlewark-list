@@ -29,6 +29,7 @@ module.exports = {
       containers: srcPath('containers'),
       network: srcPath('network'),
       routes: srcPath('routes'),
+      utils: srcPath('utils'),
     },
     extensions: ['.js', '.jsx', '.json'],
   },

@@ -5,6 +5,9 @@
 // Components
 @import './components/Card/Card.scss';
 @import './components/ListFeaturesVillage/ListFeaturesVillage.scss';
+@import './components/CitizenLandscape/CitizenLandscape.scss';
+@import './components/Loading/Loading.scss';
+@import './components/HandlerError/HandlerError.scss';
 
 // Containers
 @import './containers/Home/Home.scss';
@@ -35,6 +38,7 @@ body {
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
