@@ -15,6 +15,9 @@ module.exports = {
 
   mode: 'development',
 
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: 'source-map',
+
   devServer: {
     historyApiFallback: true,
   },
@@ -37,10 +40,32 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(s*)css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
-  },
-  resolve: {
-    extensions: ['*', '.js', '.jsx'],
   },
 
   plugins: [new HtmlWebpackPlugin({ template: './index.html', filename: './index.html' })],

@@ -1,14 +1,13 @@
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "sourceType": "module",
-        "allowImportExportEverywhere": false,
-        "codeFrame": false
-    },
-    "extends": ["airbnb", "prettier"],
-    "env": {
-        "browser": true,
-        "jest": true
-    },
-    "rules": {}
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "codeFrame": false
+  },
+  "extends": ["airbnb", "prettier"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {}
 }

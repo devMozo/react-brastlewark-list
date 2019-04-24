@@ -1,0 +1,73 @@
+.ListFeaturesVillage {
+  text-align: center;
+
+  .ListFeaturesVillageItem {
+    width: 200px;
+    display: inline-block;
+
+    .ListFeaturesVillageItem__circle {
+      width: inherit;
+      height: 200px;
+      font-size: 14px;
+      border-radius: 100%;
+      display: table-cell;
+      vertical-align: middle;
+      border: 1px solid #333;
+      box-sizing: border-box;
+
+      h2 {
+        font-size: 30px;
+        text-shadow: 2px 2px #222;
+      }
+
+      h4 {
+        color: #ddd;
+      }
+
+      &.ListFeaturesVillageItem--red {
+        border-color: $red;
+        box-shadow: 2px 2px 20px #333;
+
+        h2 {
+          color: $red;
+        }
+      }
+
+      &.ListFeaturesVillageItem--orange {
+        border-color: $orange;
+        box-shadow: 2px 2px 20px #333;
+
+        h2 {
+          color: $orange;
+        }
+      }
+
+      &.ListFeaturesVillageItem--whiteOrange {
+        border-color: $whiteOrange;
+        box-shadow: 2px 2px 20px #333;
+
+        h2 {
+          color: $whiteOrange;
+        }
+      }
+
+      &.ListFeaturesVillageItem--green {
+        border-color: $green;
+        box-shadow: 2px 2px 20px #333;
+
+        h2 {
+          color: $green;
+        }
+      }
+
+      &.ListFeaturesVillageItem--blue {
+        border-color: $blue;
+        box-shadow: 2px 2px 20px #333;
+
+        h2 {
+          color: $blue;
+        }
+      }
+    }
+  }
+}

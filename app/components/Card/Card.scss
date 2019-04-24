@@ -1,0 +1,35 @@
+.Card {
+  &.card--white-background {
+    background-color: white;
+  }
+
+  &.card--shadow {
+    box-shadow: -1px 15px 30px -12px black;
+  }
+
+  header {
+    background-image: url('assets/background.jpg');
+    img {
+      position: relative;
+      left: -40px;
+      margin-top: -40px;
+    }
+  }
+
+  .CardDescription {
+    text-align: center;
+    color: #aaa;
+
+    h2 {
+      color: #222;
+    }
+
+    a {
+      width: 100%;
+      background-color: #222;
+      color: white;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+  }
+}
