@@ -75,8 +75,15 @@ export class Village extends React.PureComponent {
           )}
           {citizens && (
             <React.Fragment>
+              <VillageDrawer
+                citizen={citizenToShow}
+                onClose={() =>
+                  this.setState({
+                    citizenToShow: undefined,
+                  })
+                }
+              />
               <VillageList />
-              <VillageDrawer citizen={citizenToShow} />
             </React.Fragment>
           )}
           <VillageFooter />

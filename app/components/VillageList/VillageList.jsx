@@ -2,24 +2,35 @@ import { CitizenLandscape } from 'components/CitizenLandscape/CitizenLandscape';
 import { Loading } from 'components/Loading/Loading';
 import { VillageContext } from 'context/Village';
 import React from 'react';
+import ReactProgressiveList from 'react-progressive-list';
 
-export const VillageList = () => {
-  return (
-    <section className="VillageList padding-2-left padding-3-right">
-      <VillageContext.Consumer>
-        {({ loading, citizens }) => (
-          <React.Fragment>
-            {loading ? (
-              <Loading />
-            ) : (
-              <ul>
-                {citizens &&
-                  citizens.map((citizen, key) => <CitizenLandscape key={key} citizen={citizen} />)}
-              </ul>
-            )}
-          </React.Fragment>
+export class VillageList extends React.Component {
+  static contextType = VillageContext;
+
+  rowRenderer = index => {
+    const { citizens } = this.context;
+
+    return <CitizenLandscape key={index} citizen={citizens[index]} />;
+  };
+
+  render() {
+    const { loading, citizens } = this.context;
+
+    return (
+      <section className="VillageList padding-2-left padding-3-right">
+        {loading ? (
+          <Loading />
+        ) : (
+          <ReactProgressiveList
+            initialAmount={40}
+            progressiveAmount={20}
+            renderItem={this.rowRenderer}
+            renderLoader={() => <Loading />}
+            rowCount={citizens.length}
+            useWindowScroll
+          />
         )}
-      </VillageContext.Consumer>
-    </section>
-  );
-};
+      </section>
+    );
+  }
+}
