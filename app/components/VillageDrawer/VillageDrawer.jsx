@@ -18,33 +18,46 @@ const VillageDrawerHeader = ({ title, img, onClose }) => {
   );
 };
 
+const VillageDrawerFeatureItem = ({ title, value }) => {
+  return (
+    <section className="VillageDrawerFeatureItem">
+      <h4 className="font-color-whiteOrange"> {title} </h4>
+      <p> {value} </p>
+    </section>
+  );
+};
+
 const VillageDrawerFeature = ({ citizen }) => {
+  const features = [
+    {
+      title: 'Name',
+      value: citizen.name,
+    },
+    {
+      title: 'Age',
+      value: citizen.age,
+    },
+    {
+      title: 'Weight',
+      value: `${Math.round(citizen.weight)}kg`,
+    },
+    {
+      title: 'Height',
+      value: `${Math.round(citizen.height)}cm`,
+    },
+    {
+      title: 'Hair Color',
+      value: citizen.hair_color,
+    },
+    {
+      title: 'Professions',
+      value: citizen.professions.length > 0 ? citizen.professions.join(', ') : 'No profession',
+    },
+  ];
+
   return (
     <section className="VillageDrawerFeature padding-2-x padding-3-bottom">
-      <section>
-        <h4 className="font-color-whiteOrange"> Name </h4>
-        <p> {citizen.name} </p>
-      </section>
-      <div>
-        <h4 className="font-color-whiteOrange"> Age </h4>
-        <p> {citizen.age} </p>
-      </div>
-      <div>
-        <h4 className="font-color-whiteOrange"> Weight </h4>
-        <p> {Math.round(citizen.weight)}kg. </p>
-      </div>
-      <div>
-        <h4 className="font-color-whiteOrange"> Height </h4>
-        <p> {Math.round(citizen.height)}cm. </p>
-      </div>
-      <div>
-        <h4 className="font-color-whiteOrange"> Hair Color </h4>
-        <p> {citizen.hair_color} </p>
-      </div>
-      <div>
-        <h4 className="font-color-whiteOrange"> Professions </h4>
-        <p> {citizen.professions.length > 0 ? citizen.professions.join(', ') : 'No profession'} </p>
-      </div>
+      {features && features.map(feature => <VillageDrawerFeatureItem {...feature} />)}
       <div>
         <h4 className="font-color-whiteOrange"> Friends </h4>
         <VillageContext.Consumer>
