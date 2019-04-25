@@ -38,3 +38,15 @@ export const getAverageAge = (citizens = []) => {
     }).age;
   return Math.round(sumCitizensAge / (lengthCitizens > 0 ? lengthCitizens : 1));
 };
+
+export const getFullCitizens = (citizens = [], friendNames = []) => {
+  const fullFriends = [];
+
+  citizens.forEach(citizen => {
+    if (friendNames.includes(citizen.name)) {
+      fullFriends.push(citizen);
+    }
+  });
+
+  return fullFriends.length > 0 ? fullFriends : friendNames;
+};

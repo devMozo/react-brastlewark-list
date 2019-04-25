@@ -10,24 +10,32 @@
     box-sizing: border-box;
     z-index: 99;
 
-    .VillageDrawer__top-bar {
-      button {
-        height: 100%;
-        background-color: transparent;
-        border: 0;
-        border-right: 1px solid #ddd;
-        cursor: pointer;
-        transition: 0.3s;
-        font-size: 20px;
+    .VillageDrawerHeader {
+      .VillageDrawerHeader__top-bar {
+        button {
+          height: 100%;
+          background-color: transparent;
+          border: 0;
+          border-right: 1px solid #ddd;
+          cursor: pointer;
+          transition: 0.3s;
+          font-size: 20px;
 
-        &:hover {
-          opacity: 0.6;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+
+        & > * {
+          display: inline-block;
+          box-sizing: border-box;
         }
       }
 
-      & > * {
-        display: inline-block;
-        box-sizing: border-box;
+      .VillageDrawerHeader__image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
       }
     }
 
@@ -38,12 +46,8 @@
       position: relative;
       float: right;
       box-shadow: -2px 0px 10px 2px #333;
-    }
-
-    .VillageDrawer__image {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
   }
 
