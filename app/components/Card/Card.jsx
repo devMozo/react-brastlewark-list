@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const Warrior = require('assets/warrior.png');
 
-export const CardDescription = ({ link = '', title = '', children }) => {
+const CardDescription = ({ link = '', title = '', children }) => {
   return (
     <section className="CardDescription">
       <h2> {title} </h2>
@@ -14,7 +14,7 @@ export const CardDescription = ({ link = '', title = '', children }) => {
   );
 };
 
-export const Card = ({ withWhiteBackground, withShadow }) => {
+export const Card = ({ withWhiteBackground, withShadow, link }) => {
   return (
     <article
       className={`Card ${withWhiteBackground && 'card--white-background'} ${withShadow &&
@@ -23,7 +23,7 @@ export const Card = ({ withWhiteBackground, withShadow }) => {
       <header>
         <img src={String(Warrior)} />
       </header>
-      <CardDescription link={'/village/brastlewark'} title="Brastlewark">
+      <CardDescription link={link} title="Brastlewark">
         Brastlewark is an almost exclusively gnomish city in eastern Cheliax, located on the western
         edge of the Aspodell Mountains, at the head of the Brastle River. It is believed to be the
         largest gnome settlement in the Inner Sea region, perhaps even in the entire world.

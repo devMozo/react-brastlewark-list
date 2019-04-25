@@ -4,10 +4,14 @@
 
 // Components
 @import './components/Card/Card.scss';
-@import './components/ListFeaturesVillage/ListFeaturesVillage.scss';
 @import './components/CitizenLandscape/CitizenLandscape.scss';
-@import './components/Loading/Loading.scss';
 @import './components/HandlerError/HandlerError.scss';
+@import './components/ListFeaturesVillage/ListFeaturesVillage.scss';
+@import './components/Loading/Loading.scss';
+@import './components/VillageDrawer/VillageDrawer.scss';
+@import './components/VillageFooter/VillageFooter.scss';
+@import './components/VillageHeader/VillageHeader.scss';
+@import './components/VillageList/VillageList.scss';
 
 // Containers
 @import './containers/Home/Home.scss';

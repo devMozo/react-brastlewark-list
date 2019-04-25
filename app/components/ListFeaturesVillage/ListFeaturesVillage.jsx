@@ -13,7 +13,7 @@ const ListFeaturesVillageItem = ({ title, value, color, loading, error }) => {
           `ListFeaturesVillageItem--${color}`}`}
       >
         {loading ? (
-          <Loading color="orange" />
+          <Loading color={color} />
         ) : (
           <React.Fragment>
             <h2 className="font-super-cell margin-0-all">{value}</h2>

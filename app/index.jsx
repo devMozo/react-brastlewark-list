@@ -1,9 +1,10 @@
+import './index.scss';
+
+import { createBrowserHistory } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppRouter } from 'routes/AppRouter';
-import { createBrowserHistory } from 'history';
 import { Router } from 'react-router-dom';
-import './index.scss';
+import { AppRouter } from 'routes/AppRouter';
 
 const history = createBrowserHistory();
 

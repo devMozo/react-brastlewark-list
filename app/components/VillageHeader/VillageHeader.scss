@@ -1,0 +1,14 @@
+.VillageHeader {
+  height: 600px;
+
+  .background {
+    height: inherit;
+    box-shadow: 0px 2px 20px 2px #333;
+  }
+
+  .village__header-title {
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 2px 2px #222;
+  }
+}

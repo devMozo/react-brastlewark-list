@@ -1,6 +1,5 @@
-import React from 'react';
-
 import { Card } from 'components/Card/Card';
+import React from 'react';
 
 const Background = require('assets/background.jpg');
 
@@ -18,7 +17,7 @@ export class Home extends React.Component {
           </h2>
         </header>
         <section>
-          <Card withWhiteBackground withShadow />
+          <Card withWhiteBackground withShadow link={'/village/brastlewark'} />
         </section>
       </section>
     );
