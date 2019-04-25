@@ -1,12 +1,44 @@
 import { VillageContext } from 'context/Village';
 import React from 'react';
 
+const CitizenLandscapeFeatures = ({ items }) => {
+  return (
+    <section className="CitizenLandscapeFeatures">
+      {items &&
+        items.map(item => (
+          <div className="CitizenLandscapeFeatures__item">
+            <h4 className="font-color-whiteOrange"> {item.title} </h4>
+            <p> {item.value} </p>
+          </div>
+        ))}
+    </section>
+  );
+};
+
 export class CitizenLandscape extends React.PureComponent {
   static contextType = VillageContext;
 
   render() {
     const { citizen } = this.props;
     const { onClickCitizen } = this.context;
+    const features = [
+      {
+        title: 'Age',
+        value: `${citizen.age}`,
+      },
+      {
+        title: 'Weight',
+        value: `${Math.round(citizen.weight)}kg.`,
+      },
+      {
+        title: 'Height',
+        value: `${Math.round(citizen.height)}cm.`,
+      },
+      {
+        title: 'Hair Color',
+        value: `${citizen.hair_color}`,
+      },
+    ];
 
     return (
       <li className="CitizenLandscape margin-1-bottom padding-1-bottom">
@@ -16,24 +48,7 @@ export class CitizenLandscape extends React.PureComponent {
         <section className="CitizenLandscape-name padding-2-x">
           <h3> {citizen.name} </h3>
         </section>
-        <section className="CitizenLandscape-features">
-          <div className="CitizenLandscape-feature">
-            <h4 className="font-color-whiteOrange"> Age </h4>
-            <p> {citizen.age} </p>
-          </div>
-          <div className="CitizenLandscape-feature">
-            <h4 className="font-color-whiteOrange"> Weight </h4>
-            <p> {Math.round(citizen.weight)}kg. </p>
-          </div>
-          <div className="CitizenLandscape-feature">
-            <h4 className="font-color-whiteOrange"> Height </h4>
-            <p> {Math.round(citizen.height)}cm. </p>
-          </div>
-          <div className="CitizenLandscape-feature">
-            <h4 className="font-color-whiteOrange"> Hair Color </h4>
-            <p> {citizen.hair_color} </p>
-          </div>
-        </section>
+        <CitizenLandscapeFeatures items={features} />
         <section className="CitizenLandscape-details">
           <button className="font-medium font-color-blue" onClick={() => onClickCitizen(citizen)}>
             {' '}

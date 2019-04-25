@@ -33,10 +33,10 @@
     box-sizing: border-box;
   }
 
-  .CitizenLandscape-features {
+  .CitizenLandscapeFeatures {
     text-align: center;
 
-    .CitizenLandscape-feature {
+    .CitizenLandscapeFeatures__item {
       width: $widthEachItemFeature;
       display: inline-block;
     }
