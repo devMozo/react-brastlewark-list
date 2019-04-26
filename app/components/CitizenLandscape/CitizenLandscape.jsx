@@ -5,8 +5,8 @@ const CitizenLandscapeFeatures = ({ items }) => {
   return (
     <section className="CitizenLandscapeFeatures">
       {items &&
-        items.map(item => (
-          <div className="CitizenLandscapeFeatures__item">
+        items.map((item, key) => (
+          <div key={key} className="CitizenLandscapeFeatures__item">
             <h4 className="font-color-whiteOrange"> {item.title} </h4>
             <p> {item.value} </p>
           </div>
@@ -20,6 +20,11 @@ export class CitizenLandscape extends React.PureComponent {
 
   render() {
     const { citizen } = this.props;
+
+    if (!citizen) {
+      return <></>;
+    }
+
     const { onClickCitizen } = this.context;
     const features = [
       {

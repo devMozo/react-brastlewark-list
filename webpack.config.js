@@ -31,6 +31,7 @@ module.exports = {
       routes: srcPath('routes'),
       utils: srcPath('utils'),
       context: srcPath('context'),
+      test: srcPath('test'),
     },
     extensions: ['.js', '.jsx', '.json'],
   },
