@@ -26,3 +26,15 @@ And then go to http://localhost:8080/
 ```
 npm run compile
 ```
+
+# Test the app
+
+```
+npm run test
+```
+
+# Run Cypress
+
+```
+npm run test:cypress
+```
