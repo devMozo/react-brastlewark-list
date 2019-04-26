@@ -1,28 +1,34 @@
-import { HandlerError } from 'components/HandlerError/HandlerError';
-import { VillageDrawer } from 'components/VillageDrawer/VillageDrawer';
-import { VillageFooter } from 'components/VillageFooter/VillageFooter';
-import { VillageHeader } from 'components/VillageHeader/VillageHeader';
-import { VillageList } from 'components/VillageList/VillageList';
-import { VillageContext } from 'context/Village';
-import { getCitizens } from 'network/citizens';
-import React from 'react';
 import { Village } from 'containers/Village/Village';
-import { render } from 'enzyme';
+import { shallow } from 'enzyme';
+import React from 'react';
+import { citizens } from 'test/unit/__mocks__/citizens.json';
 
 describe('<Village />', () => {
+  let props;
   let village;
+  const MOCK_NAME = 'Mocked Name';
+  global.fetch = jest.fn(() => new Promise(resolve => resolve(citizens)));
 
   beforeEach(() => {
+    props = {
+      match: undefined,
+    };
     village = () => {
-      return render(<Village />);
+      return shallow(<Village {...props} />);
     };
   });
 
-  // it('Snapshotesting completed <Village />', () => {
-  //   expect(village()).toMatchSnapshot();
-  // });
+  it('Snapshotesting completed <Village />', () => {
+    props = {
+      match: {
+        params: {
+          name: MOCK_NAME,
+        },
+      },
+    };
+    const mountedComponent = village();
+    mountedComponent.update();
 
-  // it('Snapshotesting <Village /> without props', () => {
-  //   expect(village()).toMatchSnapshot();
-  // });
+    expect(mountedComponent).toMatchSnapshot();
+  });
 });

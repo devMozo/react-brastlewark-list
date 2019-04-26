@@ -8,7 +8,8 @@
     "compile": "webpack",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:updateSnapshot": "jest --updateSnapshot"
+    "test:updateSnapshot": "jest --updateSnapshot",
+    "test:cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "cypress": "^3.2.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",

@@ -6,8 +6,6 @@ const ListFeaturesVillageItem = ({ title, value, color, loading, error }) => {
     value = '?';
   }
 
-  console.log(value);
-
   return (
     <section className="ListFeaturesVillageItem margin-2-x margin-3-top">
       <div
