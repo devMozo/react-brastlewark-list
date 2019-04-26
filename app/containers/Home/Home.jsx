@@ -3,7 +3,7 @@ import React from 'react';
 
 const Background = require('assets/background.jpg');
 
-export class Home extends React.Component {
+export class Home extends React.PureComponent {
   render() {
     return (
       <section className="Home">

@@ -1,0 +1,19 @@
+{
+  "features": [
+    {
+      "title": "Total Citizens",
+      "value": 200,
+      "color": "orange"
+    },
+    {
+      "title": "Carpenter",
+      "value": 300,
+      "color": "blue"
+    },
+    {
+      "title": "Average Year",
+      "value": 400,
+      "color": "green"
+    }
+  ]
+}

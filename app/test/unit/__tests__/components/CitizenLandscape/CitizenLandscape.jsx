@@ -7,7 +7,7 @@ import * as citizen from 'test/unit/__mocks__/citizen.json';
 describe('<CitizenLandscape />', () => {
   let props;
   let citizenLandscape;
-  let MOCKED_ON_CLICK_CITIZEN = jest.fn();
+  const MOCKED_ON_CLICK_CITIZEN = jest.fn();
 
   beforeEach(() => {
     props = {

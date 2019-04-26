@@ -4,7 +4,7 @@ import { VillageContext } from 'context/Village';
 import React from 'react';
 import ReactProgressiveList from 'react-progressive-list';
 
-export class VillageList extends React.Component {
+export class VillageList extends React.PureComponent {
   static contextType = VillageContext;
 
   rowRenderer = index => {
@@ -14,21 +14,23 @@ export class VillageList extends React.Component {
   };
 
   render() {
-    const { loading, citizens } = this.context;
+    const { loading, citizens = [] } = this.context;
 
     return (
       <section className="VillageList padding-2-left padding-3-right">
         {loading ? (
           <Loading />
         ) : (
-          <ReactProgressiveList
-            initialAmount={40}
-            progressiveAmount={20}
-            renderItem={this.rowRenderer}
-            renderLoader={() => <Loading />}
-            rowCount={citizens.length}
-            useWindowScroll
-          />
+          citizens.length > 0 && (
+            <ReactProgressiveList
+              initialAmount={40}
+              progressiveAmount={20}
+              renderItem={this.rowRenderer}
+              renderLoader={() => <Loading />}
+              rowCount={citizens.length}
+              useWindowScroll
+            />
+          )
         )}
       </section>
     );

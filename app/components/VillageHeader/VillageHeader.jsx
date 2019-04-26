@@ -36,7 +36,7 @@ export class VillageHeader extends React.PureComponent {
           <img src={String(Background)} />
         </div>
         <header>
-          <h1 className="village__header-title padding-2-left padding-1-top font-super-cell font-color-orange">
+          <h1 className="VillageHeader__title padding-2-left padding-1-top font-super-cell font-color-orange">
             {' '}
             {title}'s Village{' '}
           </h1>
